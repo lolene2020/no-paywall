@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ymV-vL-V2N">
-    <device id="retina4_7" orientation="portrait">
+    <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,27 +15,28 @@
         <!--Choise View Controller-->
         <scene sceneID="nYM-E2-OI4">
             <objects>
-                <viewController id="ni4-SM-SJD" customClass="ChoiseViewController" customModule="No_Paywall" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="flipHorizontal" id="ni4-SM-SJD" customClass="ChoiseViewController" customModule="No_Paywall" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nHO-QN-bah"/>
                         <viewControllerLayoutGuide type="bottom" id="0CY-Lq-ZWC"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="nkw-2W-jJz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Di-logo" translatesAutoresizingMaskIntoConstraints="NO" id="286-xI-YIR">
-                                <rect key="frame" x="94.5" y="17" width="187.5" height="300"/>
+                                <rect key="frame" x="234" y="192" width="300" height="300"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="400" id="8aT-ss-FKo"/>
+                                    <constraint firstAttribute="width" secondItem="286-xI-YIR" secondAttribute="height" multiplier="1:1" id="f0o-aI-MH6"/>
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="K3S-in-fYD" appends="YES" id="DRv-Lg-cgL"/>
                                 </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DN_logga" translatesAutoresizingMaskIntoConstraints="NO" id="NI1-QY-nrs">
-                                <rect key="frame" x="94.5" y="358" width="187.5" height="200"/>
+                                <rect key="frame" x="234" y="532" width="300" height="300"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="68h-rD-11s" appends="YES" id="6ZS-MX-dgx"/>
@@ -42,14 +45,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="NI1-QY-nrs" firstAttribute="height" secondItem="286-xI-YIR" secondAttribute="height" constant="-100" id="4De-48-1zS"/>
-                            <constraint firstItem="286-xI-YIR" firstAttribute="centerY" secondItem="nkw-2W-jJz" secondAttribute="centerY" multiplier="0.5" id="A3T-28-AZ6"/>
+                            <constraint firstItem="NI1-QY-nrs" firstAttribute="height" secondItem="286-xI-YIR" secondAttribute="height" id="4De-48-1zS"/>
+                            <constraint firstItem="286-xI-YIR" firstAttribute="height" relation="lessThanOrEqual" secondItem="nkw-2W-jJz" secondAttribute="height" multiplier="0.4" id="8sf-VU-6KR"/>
+                            <constraint firstItem="286-xI-YIR" firstAttribute="bottom" secondItem="nkw-2W-jJz" secondAttribute="centerY" constant="-20" id="A3T-28-AZ6"/>
                             <constraint firstItem="286-xI-YIR" firstAttribute="width" relation="lessThanOrEqual" secondItem="nkw-2W-jJz" secondAttribute="width" multiplier="0.5" id="Bcp-pY-wRS"/>
                             <constraint firstItem="286-xI-YIR" firstAttribute="centerX" secondItem="NI1-QY-nrs" secondAttribute="centerX" id="EbF-OZ-dw9"/>
                             <constraint firstItem="286-xI-YIR" firstAttribute="centerX" secondItem="nkw-2W-jJz" secondAttribute="centerX" id="Ket-Sh-Nhk"/>
                             <constraint firstItem="NI1-QY-nrs" firstAttribute="width" secondItem="286-xI-YIR" secondAttribute="width" id="KnE-eX-Ito"/>
                             <constraint firstItem="NI1-QY-nrs" firstAttribute="centerX" secondItem="nkw-2W-jJz" secondAttribute="centerX" id="UcF-yO-KSA"/>
-                            <constraint firstItem="NI1-QY-nrs" firstAttribute="centerY" secondItem="nkw-2W-jJz" secondAttribute="centerY" multiplier="1.5" constant="-42.25" id="XBd-AL-tZp"/>
+                            <constraint firstItem="NI1-QY-nrs" firstAttribute="top" secondItem="nkw-2W-jJz" secondAttribute="centerY" constant="20" id="XBd-AL-tZp"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rTh-rU-Ka6"/>
@@ -77,17 +81,17 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="webView" id="BYZ-38-t0r" customClass="ViewController" customModule="No_Paywall" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="webView" modalTransitionStyle="flipHorizontal" id="BYZ-38-t0r" customClass="ViewController" customModule="No_Paywall" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TC0-3s-yfX">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="TXs-pd-T54"/>
@@ -113,7 +117,7 @@
         <!--Navigation Controller-->
         <scene sceneID="yNd-7Y-Tws">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="ymV-vL-V2N" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="flipHorizontal" navigationBarHidden="YES" id="ymV-vL-V2N" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="nv4-ro-5ac">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
