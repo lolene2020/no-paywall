@@ -12,7 +12,13 @@ class ViewController: UIViewController, UIWebViewDelegate {
 
 	@IBOutlet weak var DNview: UIWebView!
 
-	var URLPath = "https://www.dn.se"
+//	var URLPath = "https://www.dn.se"
+	var URLPath = "https://www.di.se"
+
+	override func didReceiveMemoryWarning() {
+		super.didReceiveMemoryWarning()
+		// Dispose of any resources that can be recreated.
+	}
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -20,13 +26,12 @@ class ViewController: UIViewController, UIWebViewDelegate {
 		loadAddressURL()
 	}
 
-	override func didReceiveMemoryWarning() {
-		super.didReceiveMemoryWarning()
-		// Dispose of any resources that can be recreated.
-	}
-
 	func webViewDidFinishLoad(_ webView : UIWebView) {
-		injectDNPaywallRemover()
+		if URLPath == "https://www.dn.se" {
+			injectDNPaywallRemover()
+		} else {
+			injectDIPaywallRemover()
+		}
 	}
 
 	func loadAddressURL() {
@@ -35,13 +40,29 @@ class ViewController: UIViewController, UIWebViewDelegate {
 		DNview.loadRequest(request as URLRequest)
 	}
 
+	func injectDIPaywallRemover() {
+		injectStyleRules(styleFilename: "di-paywall-remover")
+	}
+
 	func injectDNPaywallRemover() {
-		let filenames = ["addGlobalStyle", "dn-paywall-remover"]
+		injectStyleRules(styleFilename: "dn-paywall-remover")
+	}
+
+	func injectJavascriptFiles(filenames: [String]) {
 		for filename in filenames {
 			let js = readJavascriptFile(filename: filename)
 			DNview.stringByEvaluatingJavaScript(from: js)
 		}
 	}
+
+	func injectStyleRules(styleFilenames: [String]) {
+		injectJavascriptFiles(filenames: ["addGlobalStyle"] + styleFilenames)
+	}
+
+	func injectStyleRules(styleFilename: String) {
+		injectJavascriptFiles(filenames: ["addGlobalStyle"] + [styleFilename])
+	}
+
 
 	func readJavascriptFile(filename: String) -> String {
 		var text = ""

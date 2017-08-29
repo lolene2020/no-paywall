@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CCB95A861F55F7EB007FECCC /* addGlobalStyle.js in Resources */ = {isa = PBXBuildFile; fileRef = CCB95A851F55F7EB007FECCC /* addGlobalStyle.js */; };
+		CCB95A881F55FAB7007FECCC /* di-paywall-remover.js in Resources */ = {isa = PBXBuildFile; fileRef = CCB95A871F55FAB7007FECCC /* di-paywall-remover.js */; };
 		CCBF18311F55CC5A00A12799 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBF18301F55CC5900A12799 /* AppDelegate.swift */; };
 		CCBF18331F55CC5A00A12799 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBF18321F55CC5A00A12799 /* ViewController.swift */; };
 		CCBF18361F55CC5A00A12799 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCBF18341F55CC5A00A12799 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		CCB95A851F55F7EB007FECCC /* addGlobalStyle.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = addGlobalStyle.js; sourceTree = "<group>"; };
+		CCB95A871F55FAB7007FECCC /* di-paywall-remover.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "di-paywall-remover.js"; sourceTree = "<group>"; };
 		CCBF182D1F55CC5900A12799 /* No Paywall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "No Paywall.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCBF18301F55CC5900A12799 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCBF18321F55CC5A00A12799 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -43,6 +45,7 @@
 			isa = PBXGroup;
 			children = (
 				CCBF18481F55E19900A12799 /* dn-paywall-remover.js */,
+				CCB95A871F55FAB7007FECCC /* di-paywall-remover.js */,
 				CCB95A851F55F7EB007FECCC /* addGlobalStyle.js */,
 			);
 			name = Javascript;
@@ -141,6 +144,7 @@
 				CCBF183B1F55CC5A00A12799 /* LaunchScreen.storyboard in Resources */,
 				CCB95A861F55F7EB007FECCC /* addGlobalStyle.js in Resources */,
 				CCBF18381F55CC5A00A12799 /* Assets.xcassets in Resources */,
+				CCB95A881F55FAB7007FECCC /* di-paywall-remover.js in Resources */,
 				CCBF18491F55E19900A12799 /* dn-paywall-remover.js in Resources */,
 				CCBF18361F55CC5A00A12799 /* Main.storyboard in Resources */,
 			);
