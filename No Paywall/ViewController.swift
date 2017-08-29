@@ -12,8 +12,9 @@ class ViewController: UIViewController, UIWebViewDelegate {
 
 	@IBOutlet weak var DNview: UIWebView!
 
+	var URLPath = ""
 //	var URLPath = "https://www.dn.se"
-	var URLPath = "https://www.di.se"
+//	var URLPath = "https://www.di.se"
 
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()

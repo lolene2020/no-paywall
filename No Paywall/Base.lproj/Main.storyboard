@@ -1,18 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ymV-vL-V2N">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Choise View Controller-->
+        <scene sceneID="nYM-E2-OI4">
+            <objects>
+                <viewController id="ni4-SM-SJD" customClass="ChoiseViewController" customModule="No_Paywall" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nHO-QN-bah"/>
+                        <viewControllerLayoutGuide type="bottom" id="0CY-Lq-ZWC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nkw-2W-jJz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Di-logo" translatesAutoresizingMaskIntoConstraints="NO" id="286-xI-YIR">
+                                <rect key="frame" x="94.5" y="17" width="187.5" height="300"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="400" id="8aT-ss-FKo"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="K3S-in-fYD" appends="YES" id="DRv-Lg-cgL"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DN_logga" translatesAutoresizingMaskIntoConstraints="NO" id="NI1-QY-nrs">
+                                <rect key="frame" x="94.5" y="358" width="187.5" height="200"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="68h-rD-11s" appends="YES" id="6ZS-MX-dgx"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NI1-QY-nrs" firstAttribute="height" secondItem="286-xI-YIR" secondAttribute="height" constant="-100" id="4De-48-1zS"/>
+                            <constraint firstItem="286-xI-YIR" firstAttribute="centerY" secondItem="nkw-2W-jJz" secondAttribute="centerY" multiplier="0.5" id="A3T-28-AZ6"/>
+                            <constraint firstItem="286-xI-YIR" firstAttribute="width" relation="lessThanOrEqual" secondItem="nkw-2W-jJz" secondAttribute="width" multiplier="0.5" id="Bcp-pY-wRS"/>
+                            <constraint firstItem="286-xI-YIR" firstAttribute="centerX" secondItem="NI1-QY-nrs" secondAttribute="centerX" id="EbF-OZ-dw9"/>
+                            <constraint firstItem="286-xI-YIR" firstAttribute="centerX" secondItem="nkw-2W-jJz" secondAttribute="centerX" id="Ket-Sh-Nhk"/>
+                            <constraint firstItem="NI1-QY-nrs" firstAttribute="width" secondItem="286-xI-YIR" secondAttribute="width" id="KnE-eX-Ito"/>
+                            <constraint firstItem="NI1-QY-nrs" firstAttribute="centerX" secondItem="nkw-2W-jJz" secondAttribute="centerX" id="UcF-yO-KSA"/>
+                            <constraint firstItem="NI1-QY-nrs" firstAttribute="centerY" secondItem="nkw-2W-jJz" secondAttribute="centerY" multiplier="1.5" constant="-42.25" id="XBd-AL-tZp"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="rTh-rU-Ka6"/>
+                    <connections>
+                        <outlet property="diTouch" destination="K3S-in-fYD" id="cMY-Si-Y86"/>
+                        <outlet property="dnTouch" destination="68h-rD-11s" id="yrk-16-KpV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gro-tv-Gfj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="K3S-in-fYD">
+                    <connections>
+                        <action selector="handleDiTapWithRecognizer:" destination="ni4-SM-SJD" id="4yD-80-Kag"/>
+                        <outlet property="delegate" destination="ni4-SM-SJD" id="7h7-m4-4Dd"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="68h-rD-11s">
+                    <connections>
+                        <action selector="handleDnTapWithRecognizer:" destination="ni4-SM-SJD" id="Uoi-I5-EBs"/>
+                        <outlet property="delegate" destination="ni4-SM-SJD" id="T6u-Hb-iwR"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="264.80000000000001" y="136.28185907046478"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="No_Paywall" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="webView" id="BYZ-38-t0r" customClass="ViewController" customModule="No_Paywall" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -43,7 +108,33 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140" y="137.18140929535232"/>
+            <point key="canvasLocation" x="1079.2" y="137.18140929535232"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yNd-7Y-Tws">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="ymV-vL-V2N" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nv4-ro-5ac">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="tND-Du-Nz0">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="ni4-SM-SJD" kind="relationship" relationship="rootViewController" id="mZy-0s-5i4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OH3-hI-u30" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-674.39999999999998" y="136.28185907046478"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="DN_logga" width="200" height="200"/>
+        <image name="Di-logo" width="300" height="300"/>
+    </resources>
 </document>
