@@ -36,11 +36,11 @@ class ViewController: UIViewController, UIWebViewDelegate {
 	}
 
 	func injectDNPaywallRemover() {
-		let filename = "dn-paywall-remover"
-
-		let js = readJavascriptFile(filename: filename)
-
-		DNview.stringByEvaluatingJavaScript(from: js)
+		let filenames = ["addGlobalStyle", "dn-paywall-remover"]
+		for filename in filenames {
+			let js = readJavascriptFile(filename: filename)
+			DNview.stringByEvaluatingJavaScript(from: js)
+		}
 	}
 
 	func readJavascriptFile(filename: String) -> String {
