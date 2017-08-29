@@ -12,6 +12,7 @@
 		CCBF18361F55CC5A00A12799 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCBF18341F55CC5A00A12799 /* Main.storyboard */; };
 		CCBF18381F55CC5A00A12799 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCBF18371F55CC5A00A12799 /* Assets.xcassets */; };
 		CCBF183B1F55CC5A00A12799 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCBF18391F55CC5A00A12799 /* LaunchScreen.storyboard */; };
+		CCBF18491F55E19900A12799 /* dn-paywall-remover.js in Resources */ = {isa = PBXBuildFile; fileRef = CCBF18481F55E19900A12799 /* dn-paywall-remover.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		CCBF18371F55CC5A00A12799 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CCBF183A1F55CC5A00A12799 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CCBF183C1F55CC5A00A12799 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCBF18481F55E19900A12799 /* dn-paywall-remover.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "dn-paywall-remover.js"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +37,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CCBBA1DF1F55E27A004C908A /* Javascript */ = {
+			isa = PBXGroup;
+			children = (
+				CCBF18481F55E19900A12799 /* dn-paywall-remover.js */,
+			);
+			name = Javascript;
+			sourceTree = "<group>";
+		};
 		CCBF18241F55CC5900A12799 = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +64,7 @@
 		CCBF182F1F55CC5900A12799 /* No Paywall */ = {
 			isa = PBXGroup;
 			children = (
+				CCBBA1DF1F55E27A004C908A /* Javascript */,
 				CCBF18301F55CC5900A12799 /* AppDelegate.swift */,
 				CCBF18321F55CC5A00A12799 /* ViewController.swift */,
 				CCBF18341F55CC5A00A12799 /* Main.storyboard */,
@@ -96,6 +107,7 @@
 				TargetAttributes = {
 					CCBF182C1F55CC5900A12799 = {
 						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = WJAZSHDD28;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -125,6 +137,7 @@
 			files = (
 				CCBF183B1F55CC5A00A12799 /* LaunchScreen.storyboard in Resources */,
 				CCBF18381F55CC5A00A12799 /* Assets.xcassets in Resources */,
+				CCBF18491F55E19900A12799 /* dn-paywall-remover.js in Resources */,
 				CCBF18361F55CC5A00A12799 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,9 +275,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = WJAZSHDD28;
 				INFOPLIST_FILE = "No Paywall/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.gh0st.No-Paywall";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gh0st.no.paywall;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -274,9 +288,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = WJAZSHDD28;
 				INFOPLIST_FILE = "No Paywall/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.gh0st.No-Paywall";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gh0st.no.paywall;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -301,6 +316,7 @@
 				CCBF18411F55CC5A00A12799 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
