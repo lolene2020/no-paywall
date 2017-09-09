@@ -1,0 +1,20 @@
+/* None */
+div.ad,
+div.paywall,
+div.ad--match-ad,
+div.account-information,
+div.navigation__sticky-container--sticky {
+	display: none !important;
+}
+/* Block */
+div.factbox,
+.article__body--mask,
+.article__premium-content,
+.article__premium-content > * {
+	display: block !important;
+}
+
+/* Other */
+.article__body--mask .article__lead {
+	position: initial !important; max-height: 1000px !important;
+}

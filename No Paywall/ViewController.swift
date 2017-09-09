@@ -13,8 +13,6 @@ class ViewController: UIViewController, UIWebViewDelegate {
 	@IBOutlet weak var DNview: UIWebView!
 
 	var URLPath = ""
-//	var URLPath = "https://www.dn.se"
-//	var URLPath = "https://www.di.se"
 
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
@@ -27,12 +25,18 @@ class ViewController: UIViewController, UIWebViewDelegate {
 		loadAddressURL()
 	}
 
+	var lastLoadEvent = Date().addingTimeInterval(-1.1)
+
 	func webViewDidFinishLoad(_ webView : UIWebView) {
-		if URLPath == "https://www.dn.se" {
-			injectDNPaywallRemover()
-		} else {
-			injectDIPaywallRemover()
+		if (lastLoadEvent < Date().addingTimeInterval(-1)) {
+			print("inject")
+			if URLPath == "https://www.dn.se" {
+				injectDNPaywallRemover()
+			} else {
+				injectDIPaywallRemover()
+			}
 		}
+		lastLoadEvent = Date()
 	}
 
 	func loadAddressURL() {
@@ -46,14 +50,9 @@ class ViewController: UIViewController, UIWebViewDelegate {
 	}
 
 	func injectDNPaywallRemover() {
-		injectStyleRules(styleFilename: "dn-paywall-remover")
-	}
-
-	func injectJavascriptFiles(filenames: [String]) {
-		for filename in filenames {
-			let js = readJavascriptFile(filename: filename)
-			DNview.stringByEvaluatingJavaScript(from: js)
-		}
+		//injectStyleRules(styleFilename: "dn-paywall-remover")
+		injectJavascriptFiles(filenames: ["addGlobalStyle"])
+		injectCSSfile(filename: "dn")
 	}
 
 	func injectStyleRules(styleFilenames: [String]) {
@@ -64,12 +63,36 @@ class ViewController: UIViewController, UIWebViewDelegate {
 		injectJavascriptFiles(filenames: ["addGlobalStyle"] + [styleFilename])
 	}
 
+	func injectJavascriptFiles(filenames: [String]) {
+		for filename in filenames {
+			let js = readJavascriptFile(filename: filename)
+			DNview.stringByEvaluatingJavaScript(from: js)
+		}
+	}
+
+	func injectCSSfile(filename: String) {
+		let path = Bundle.main.path(forResource: filename, ofType: "css")
+		if (path == nil) {
+			return
+		}
+		let text = readTextFromFilePath(path: path!).replacingOccurrences(of: "\n", with: " ")
+		if text != "" {
+			DNview.stringByEvaluatingJavaScript(from: "addGlobalStyle('" + text + "');")
+		}
+
+	}
 
 	func readJavascriptFile(filename: String) -> String {
-		var text = ""
+
 		let path = Bundle.main.path(forResource: filename, ofType: "js")
+
+		return readTextFromFilePath(path: path!)
+	}
+
+	func readTextFromFilePath( path: String ) -> String {
+		var text = ""
 		do {
-			text = try String(contentsOfFile: path!, encoding: String.Encoding.utf8)
+			text = try String(contentsOfFile: path, encoding: String.Encoding.utf8)
 		}
 		catch {
 			print(error)

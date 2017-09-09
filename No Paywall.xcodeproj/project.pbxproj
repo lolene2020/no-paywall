@@ -16,6 +16,8 @@
 		CCBF18381F55CC5A00A12799 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCBF18371F55CC5A00A12799 /* Assets.xcassets */; };
 		CCBF183B1F55CC5A00A12799 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCBF18391F55CC5A00A12799 /* LaunchScreen.storyboard */; };
 		CCBF18491F55E19900A12799 /* dn-paywall-remover.js in Resources */ = {isa = PBXBuildFile; fileRef = CCBF18481F55E19900A12799 /* dn-paywall-remover.js */; };
+		CCE2BED51F64923800269C89 /* di.css in Resources */ = {isa = PBXBuildFile; fileRef = CCE2BED41F64923800269C89 /* di.css */; };
+		CCE2BED81F64946600269C89 /* dn.css in Resources */ = {isa = PBXBuildFile; fileRef = CCE2BED71F64946600269C89 /* dn.css */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		CCBF183A1F55CC5A00A12799 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CCBF183C1F55CC5A00A12799 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CCBF18481F55E19900A12799 /* dn-paywall-remover.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "dn-paywall-remover.js"; sourceTree = "<group>"; };
+		CCE2BED41F64923800269C89 /* di.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = di.css; path = CSS/di.css; sourceTree = "<group>"; };
+		CCE2BED71F64946600269C89 /* dn.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = dn.css; path = CSS/dn.css; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,7 @@
 		CCBF182F1F55CC5900A12799 /* No Paywall */ = {
 			isa = PBXGroup;
 			children = (
+				CCE2BED61F64924E00269C89 /* CSS */,
 				CCBBA1DF1F55E27A004C908A /* Javascript */,
 				CCBF18301F55CC5900A12799 /* AppDelegate.swift */,
 				CCBF18321F55CC5A00A12799 /* ViewController.swift */,
@@ -82,6 +87,15 @@
 				CCBF183C1F55CC5A00A12799 /* Info.plist */,
 			);
 			path = "No Paywall";
+			sourceTree = "<group>";
+		};
+		CCE2BED61F64924E00269C89 /* CSS */ = {
+			isa = PBXGroup;
+			children = (
+				CCE2BED41F64923800269C89 /* di.css */,
+				CCE2BED71F64946600269C89 /* dn.css */,
+			);
+			name = CSS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,11 +159,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCBF183B1F55CC5A00A12799 /* LaunchScreen.storyboard in Resources */,
+				CCE2BED51F64923800269C89 /* di.css in Resources */,
 				CCB95A861F55F7EB007FECCC /* addGlobalStyle.js in Resources */,
 				CCBF18381F55CC5A00A12799 /* Assets.xcassets in Resources */,
 				CCB95A881F55FAB7007FECCC /* di-paywall-remover.js in Resources */,
 				CCBF18491F55E19900A12799 /* dn-paywall-remover.js in Resources */,
 				CCBF18361F55CC5A00A12799 /* Main.storyboard in Resources */,
+				CCE2BED81F64946600269C89 /* dn.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
