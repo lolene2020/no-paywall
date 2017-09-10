@@ -1,9 +1,10 @@
-div#serviceplusPaywallpaywall-container,
-iframe, div.di_panorama-wrapper,
-.di_enrichment--ad,
+iframe,
 div.ad_container,
+.di_enrichment--ad,
 a[href*="/sponsrat/"],
-a[href*="kampanj.di.se"] {
+div.di_panorama-wrapper,
+a[href*="kampanj.di.se"],
+div#serviceplusPaywallpaywall-container {
 	display: none !important;
 }
 
