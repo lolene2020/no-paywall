@@ -29,7 +29,6 @@ class ViewController: UIViewController, UIWebViewDelegate {
 
 	func webViewDidFinishLoad(_ webView : UIWebView) {
 		if (lastLoadEvent < Date().addingTimeInterval(-1)) {
-			print("inject")
 			if URLPath == "https://www.dn.se" {
 				injectDNPaywallRemover()
 			} else {
@@ -46,11 +45,11 @@ class ViewController: UIViewController, UIWebViewDelegate {
 	}
 
 	func injectDIPaywallRemover() {
-		injectStyleRules(styleFilename: "di-paywall-remover")
+		injectJavascriptFiles(filenames: ["addGlobalStyle"])
+		injectCSSfile(filename: "di")
 	}
 
 	func injectDNPaywallRemover() {
-		//injectStyleRules(styleFilename: "dn-paywall-remover")
 		injectJavascriptFiles(filenames: ["addGlobalStyle"])
 		injectCSSfile(filename: "dn")
 	}
