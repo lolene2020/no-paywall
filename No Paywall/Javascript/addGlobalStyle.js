@@ -7,6 +7,7 @@ function hashCode(s) {
 }
 
 function addGlobalStyle(css) {
+	if(!css) { return "installed"; }
 	var head, style, hash;
 	head = document.getElementsByTagName('head')[0];
 	if (!head) {

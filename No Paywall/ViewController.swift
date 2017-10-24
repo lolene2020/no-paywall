@@ -30,9 +30,9 @@ class ViewController: UIViewController, UIWebViewDelegate {
 	func webViewDidFinishLoad(_ webView : UIWebView) {
 		if (lastLoadEvent < Date().addingTimeInterval(-1)) {
 			if URLPath == "https://www.dn.se" {
-				injectDNPaywallRemover()
-			} else {
-				injectDIPaywallRemover()
+				injectCSSfile(filename: "dn")
+			} else if URLPath == "https://www.di.se" {
+				injectCSSfile(filename: "di")
 			}
 		}
 		lastLoadEvent = Date()
@@ -44,28 +44,14 @@ class ViewController: UIViewController, UIWebViewDelegate {
 		DNview.loadRequest(request as URLRequest)
 	}
 
-	func injectDIPaywallRemover() {
-		injectJavascriptFiles(filenames: ["addGlobalStyle"])
-		injectCSSfile(filename: "di")
-	}
-
-	func injectDNPaywallRemover() {
-		injectJavascriptFiles(filenames: ["addGlobalStyle"])
-		injectCSSfile(filename: "dn")
-	}
-
-	func injectStyleRules(styleFilenames: [String]) {
-		injectJavascriptFiles(filenames: ["addGlobalStyle"] + styleFilenames)
-	}
-
-	func injectStyleRules(styleFilename: String) {
-		injectJavascriptFiles(filenames: ["addGlobalStyle"] + [styleFilename])
+	func injectJavascriptFile(filename: String) {
+		let js = readJavascriptFile(filename: filename)
+		DNview.stringByEvaluatingJavaScript(from: js)
 	}
 
 	func injectJavascriptFiles(filenames: [String]) {
 		for filename in filenames {
-			let js = readJavascriptFile(filename: filename)
-			DNview.stringByEvaluatingJavaScript(from: js)
+			injectJavascriptFile(filename: filename)
 		}
 	}
 
@@ -76,6 +62,11 @@ class ViewController: UIViewController, UIWebViewDelegate {
 		}
 		let text = readTextFromFilePath(path: path!).replacingOccurrences(of: "\n", with: " ")
 		if text != "" {
+			let globalStyle = DNview.stringByEvaluatingJavaScript(from: "addGlobalStyle()")
+			if globalStyle != "installed" {
+				injectJavascriptFile(filename: "addGlobalStyle")
+			}
+
 			DNview.stringByEvaluatingJavaScript(from: "addGlobalStyle('" + text + "');")
 		}
 
